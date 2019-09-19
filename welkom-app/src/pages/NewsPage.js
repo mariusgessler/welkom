@@ -15,7 +15,6 @@ const slidesOpts = {
 const NewsPage = () => {
   return (
     <IonPage>
-      <Header/>
       <IonContent>
         <IonSlides scrollbar={true} id="slides" options={slidesOpts}>
         <NewsArticles/>

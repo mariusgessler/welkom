@@ -12,9 +12,8 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { chatboxes, flash, cash } from 'ionicons/icons';
 import NewsPage from './pages/NewsPage';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
-import Details from './pages/Details';
+import TranslatorPage from './pages/TranslatorPage';
+import ConverterPage from './pages/ConverterPage';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -34,29 +33,30 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Header from './components/Header/Header';
 
 function App() {
   return  (
   <IonApp>
+    <Header/>
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/tab1" component={NewsPage} exact={true} />
-          <Route path="/tab2" component={Tab2} exact={true} />
-          <Route path="/tab2/details" component={Details} />
-          <Route path="/tab3" component={Tab3} />
-          <Route exact path="/" render={() => <Redirect to="/tab1" />} />
+          <Route path="/news" component={NewsPage} exact={true} />
+          <Route path="/translator" component={TranslatorPage} exact={true} />
+          <Route path="/converter" component={ConverterPage} />
+          <Route exact path="/" render={() => <Redirect to="/news" />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="news" href="/news">
             <IonIcon icon={flash} />
             <IonLabel>News</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="translator" href="/translator">
             <IonIcon icon={chatboxes} />
             <IonLabel>Translator</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
+          <IonTabButton tab="converter" href="/converter">
             <IonIcon icon={cash} />
             <IonLabel>Converter</IonLabel>
           </IonTabButton>

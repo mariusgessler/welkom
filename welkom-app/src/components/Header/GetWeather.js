@@ -27,6 +27,7 @@ class GetWeather extends Component{
         .then((data) => {
             this.setState({weather:data.currently})
             this.setState({isLoading:false})
+            console.log(this.state.weather.precipProbability)
         })
         .catch((error) => {
             alert(error)
@@ -34,13 +35,12 @@ class GetWeather extends Component{
     };
 
     render(){
-        // Conditionally rendering the umbrella icon as soon as the weather data has been.
-        // set in the state
+        // Conditionally rendering the umbrella icon as soon as the weather data has been set.
         return (
             <>
             {!this.state.isLoading ? 
-            this.state.weather.precipProbability > 0.5 ?   <IonIcon icon={ umbrella }  /> : console.log(this.state.weather) 
-            :  <IonSpinner size="small"/> }
+            this.state.weather.precipProbability > 0.5 ?   <span role="img" aria-label="umbrella">☂️</span>  : null 
+            :  null}
             
             </>
         );
