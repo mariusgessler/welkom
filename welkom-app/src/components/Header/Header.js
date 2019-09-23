@@ -1,16 +1,17 @@
 import React from 'react';
+import { IonHeader } from '@ionic/react'
+
 import WeatherWidget from './WeatherWidget';
 import Greeting from './Greeting';
-import { IonHeader } from '@ionic/react'
+import './Header.css';
 
 const Header = () => {
     return (
-        <IonHeader>
-        <h2><Greeting/></h2>
-        <WeatherWidget/>
+        <IonHeader className='header'>
+            <h1><Greeting/></h1>
+            <WeatherWidget/>
         </IonHeader>
     )
-
 }
 
 export default Header;

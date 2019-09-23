@@ -1,11 +1,11 @@
 import React, {Component} from "react";
-import { IonIcon, IonSpinner } from '@ionic/react';
-import { umbrella } from 'ionicons/icons';
+import { 
+         IonFab, IonFabButton 
+         } from '@ionic/react';
 
 const BASE_URL = "https://api.darksky.net/forecast/";
 const API_KEY  = process.env.REACT_APP_WEATHER_API_KEY;
 const CORS     = "https://cors-anywhere.herokuapp.com/";
-
 
 
 class GetWeather extends Component{
@@ -13,7 +13,6 @@ class GetWeather extends Component{
         super(props);
         this.state = {
             weather: [],
-            isLoading: true,
         }
     };
 
@@ -26,8 +25,7 @@ class GetWeather extends Component{
         fetch(URL).then(response => response.json())
         .then((data) => {
             this.setState({weather:data.currently})
-            this.setState({isLoading:false})
-            console.log(this.state.weather.precipProbability)
+            console.log(this.state.weather)
         })
         .catch((error) => {
             alert(error)
@@ -39,9 +37,16 @@ class GetWeather extends Component{
         return (
             <>
             {!this.state.isLoading ? 
-            this.state.weather.precipProbability > 0.5 ?   <span role="img" aria-label="umbrella">☂️</span>  : null 
+
+            this.state.weather.precipProbability > 0.6 ? 
+                <IonFab vertical="start"  horizontal="end" slot="fixed">
+                    <IonFabButton color="light" >
+                        <span role="img" aria-label="umbrella" className="umbrella">☂️</span>
+                    </IonFabButton>
+                </IonFab> 
+            : null 
+
             :  null}
-            
             </>
         );
     };

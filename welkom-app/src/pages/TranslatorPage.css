@@ -1,0 +1,22 @@
+.output-card{
+    background-color: whitesmoke;
+    height: 250px;
+}
+
+.output-card p, .text-input {
+    font-size: 1.3rem;
+    color: black;
+}
+
+.flag{
+    font-size: 2rem;
+}
+
+.swap-button{
+    margin: 0;
+}
+
+.translate-button{
+    margin: 0;
+    border-radius: 0 8px;
+}

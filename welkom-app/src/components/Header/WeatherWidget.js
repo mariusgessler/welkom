@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import GetWeather from './GetWeather';
 
 class WeatherWidget extends Component{
@@ -8,28 +9,31 @@ class WeatherWidget extends Component{
             lngt: null,
             latd: null
         }
-    }
+    };
 
     componentDidMount(){
         this.getLocation()
-    }
+    };
 
     getLocation = () => {
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(position => {
-                this.setState({lngt: position.coords.longitude.toFixed(2)}); //Formating the location data so a valid API fetch can be made.
-                this.setState({latd:position.coords.latitude.toFixed(2)});     
-                console.log(this.state.lngt)           
-            });
-        };
-    }
+                this.setState({
+                    //Formating the location data so a valid API fetch can be made. 
+                    lngt: position.coords.longitude.toFixed(2),
+                    latd: position.coords.latitude.toFixed(2)
+                })         
+            })
+        }
+    };
    
     render() {
-            const { lngt, latd } = this.state;
-            if (!lngt || !latd) return null; // Conditinally rendering the WeatherWidget if user allows to get his geolocation/
-            return <GetWeather lngt={lngt} latd={latd} />;
-            }
+             // Conditinally rendering the WeatherWidget if user allows to get his geolocation/
+                if (!this.state.lngt || !this.state.latd) return null; 
+                    return <GetWeather lngt={this.state.lngt} latd={this.state.latd} />;
             };
+    
+};
 export default WeatherWidget;
 
 

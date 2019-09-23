@@ -1,0 +1,17 @@
+.converter-output{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 50%;
+} 
+
+
+.converter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+ 

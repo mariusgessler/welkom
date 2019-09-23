@@ -1,18 +1,23 @@
-import {
-  IonSlides, IonPage, IonContent
-} from '@ionic/react';
 import React from 'react';
+import {
+   IonPage, 
+   IonContent
+} from '@ionic/react';
+
 import Header from '../components/Header/Header';
 import Translator from '../components/Translator';
+import './TranslatorPage.css'
 
 const TranslatorPage = () => {
   return (
+    <>
     <IonPage>
-      <IonContent>
-          <h1>Translator</h1>
-        <Translator/>
-      </IonContent>
+      <Header/>
+        <IonContent>
+          <Translator/>
+        </IonContent>
     </IonPage>
+    </>
   );
 };
 

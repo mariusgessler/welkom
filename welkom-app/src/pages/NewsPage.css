@@ -1,0 +1,14 @@
+.card a {
+    text-decoration: none;
+}
+
+.card-content{
+    padding-top: 0;
+}
+
+.spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,0);
+}

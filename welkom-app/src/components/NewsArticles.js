@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { IonButton, IonImg, IonSlide, IonContent, IonTextarea, IonItem, IonItemGroup, IonItemDivider, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonSlides } from '@ionic/react'
+import { IonSpinner,
+         IonImg, 
+        IonCard, 
+        IonCardContent, 
+        IonCardTitle, 
+        IonCardHeader, 
+        IonCardSubtitle } from '@ionic/react'
 
 const BASE_URL       = "https://newsapi.org/v2/everything?q=netherlands&apiKey=";
 const API_KEY        = process.env.REACT_APP_NEWS_API_KEY;
-
-
-
 
 class NewsArticles extends Component {
     constructor() {
         super();
         this.state = {
-            articles: []
+            articles: [],
+            isLoading: true
         }
-        this.getArticles = this.getArticles.bind(this)
     }
 
 
@@ -21,13 +24,15 @@ class NewsArticles extends Component {
         this.getArticles()
     }
 
-    getArticles(){
+    getArticles = () => {
         const URL = BASE_URL + API_KEY;
-
-        fetch(URL). then(response => response.json())
-        .then((data) => {
-            this.setState({articles:data.articles});
-            console.log(this.state.articles)
+        fetch(URL).then(response=>response.json())
+        .then((data)=>{
+            this.setState({
+                articles:data.articles,
+                isLoading:false
+                });
+                console.log(data)
         })
         .catch((error) => {
             alert(error);
@@ -37,24 +42,22 @@ class NewsArticles extends Component {
     render() {
         return (
             <>
-            {/* <IonContent> */}
-           
-                {this.state.articles.map((articles) => 
-                 <IonSlide>
-                    <a href={articles.url}>
-                    <IonCard>
+           {!this.state.isLoading ?
+                this.state.articles.map((articles,index) => 
+                    <IonCard key={index} className="card">
                         <IonImg src={articles.urlToImage}></IonImg>
-                        <IonCardContent>
                             <IonCardHeader>
+                                <a href={articles.url}>
+                                <IonCardSubtitle>{articles.source.name}, {articles.publishedAt.slice(0,10)}</IonCardSubtitle>
                                 <IonCardTitle>{articles.title}</IonCardTitle>
+                                </a>
                             </IonCardHeader>
+                             <IonCardContent className="card-content">
                             <p>{articles.description}</p>
                         </IonCardContent>
                     </IonCard>
-                    </a>
-                    </IonSlide>
-                )}        
-            
+                )       
+           : <IonSpinner className="spinner"/> }
             </>
         )
     }
