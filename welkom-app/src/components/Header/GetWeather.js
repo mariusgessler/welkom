@@ -25,7 +25,6 @@ class GetWeather extends Component{
         fetch(URL).then(response => response.json())
         .then((data) => {
             this.setState({weather:data.currently})
-            console.log(this.state.weather)
         })
         .catch((error) => {
             console.log(error)
@@ -33,11 +32,9 @@ class GetWeather extends Component{
     };
 
     render(){
-        // Conditionally rendering the umbrella icon as soon as the weather data has been set.
         return (
             <>
             {!this.state.isLoading ? 
-
             this.state.weather.precipProbability > 0.6 ? 
                 <IonFab vertical="start"  horizontal="end" slot="fixed">
                     <IonFabButton color="light" >

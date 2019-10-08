@@ -19,7 +19,6 @@ class WeatherWidget extends Component{
         if(navigator.geolocation){
             navigator.geolocation.getCurrentPosition(position => {
                 this.setState({
-                    //Formating the location data so a valid API fetch can be made. 
                     lngt: position.coords.longitude.toFixed(2),
                     latd: position.coords.latitude.toFixed(2)
                 })         
@@ -28,12 +27,12 @@ class WeatherWidget extends Component{
     };
    
     render() {
-             // Conditinally rendering the WeatherWidget if user allows to get his geolocation/
                 if (!this.state.lngt || !this.state.latd) return null; 
                     return <GetWeather lngt={this.state.lngt} latd={this.state.latd} />;
             };
     
 };
+
 export default WeatherWidget;
 
 

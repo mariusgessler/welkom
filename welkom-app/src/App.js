@@ -36,13 +36,14 @@ import './theme/variables.css';
 
 function App() {
   return  (
-  <IonApp style={{maxWidth: "600px", margin: "0 auto"}}>
+  <IonApp style={{maxWidth: "500px", margin: "0 auto"}}>
+
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
           <Route path="/news" component={NewsPage} exact={true} />
           <Route path="/translator" component={TranslatorPage} exact={true} />
-          <Route path="/converter" component={ConverterPage} />
+          <Route path="/converter" component={ConverterPage} exact={true}/>
           <Route exact path="/" render={() => <Redirect to="/news" />} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -61,6 +62,7 @@ function App() {
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
+
   </IonApp>
 );
 }
