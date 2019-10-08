@@ -5,6 +5,7 @@ import {
 
 const BASE_URL = "https://api.darksky.net/forecast/";
 const API_KEY  = process.env.REACT_APP_WEATHER_API_KEY;
+const CORS     = "https://cors-anywhere.herokuapp.com/";
 
 
 class GetWeather extends Component{
@@ -20,7 +21,7 @@ class GetWeather extends Component{
     };
 
     getWeather = (location) => {
-        const URL = BASE_URL + API_KEY + '/'  + location.latd + ',' + location.lngt;
+        const URL = CORS + BASE_URL + API_KEY + '/'  + location.latd + ',' + location.lngt;
         fetch(URL).then(response => response.json())
         .then((data) => {
             this.setState({weather:data.currently})
