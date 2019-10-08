@@ -32,7 +32,6 @@ class NewsArticles extends Component {
                 articles:data.articles,
                 isLoading:false
                 });
-                console.log(data)
         })
         .catch((error) => {
             alert(error);

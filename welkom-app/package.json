@@ -37,5 +37,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "description": "An Ionic project"
+  "description": "An app, which makes the process of settling in a new country just a tad easier."
 }

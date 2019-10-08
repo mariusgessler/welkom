@@ -1,0 +1,14 @@
+{
+  "name": "Welkom!",
+  "short_name": "Welkom!",
+  "start_url": "index.html",
+  "description": "An app, which makes the process of settling in a new country just a tad easier.",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/icon/favicon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#whitesmoke",
+  "theme_color": "#whitesmoke"
+}
