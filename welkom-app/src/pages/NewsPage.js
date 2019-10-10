@@ -13,7 +13,7 @@ const NewsPage = () => {
     <>
     <IonPage>
       <Header/>
-        <IonContent>
+        <IonContent style={{maxWidth: "500px", alignItems: "center"}}>
           <NewsArticles/>
         </IonContent>
     </IonPage>

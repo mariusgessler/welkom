@@ -36,7 +36,7 @@ import './theme/variables.css';
 
 function App() {
   return  (
-  <IonApp style={{maxWidth: "500px", margin: "0 auto"}}>
+  <IonApp style={{maxWidth: "1100px", margin: "0 auto"}}>
 
     <IonReactRouter>
       <IonTabs>
