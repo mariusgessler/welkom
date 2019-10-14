@@ -19,7 +19,7 @@ APIs:
 
 * [_News API_](https://newsapi.org)
 * [_Dark Sky Weather API_](https://darksky.net/dev)
-* [_Currency Converter API_](https://darksky.net/dev)
+* [_Currency Converter API_](https://www.currencyconverterapi.com/)
 * [_Google Translate Package_](https://cloud.google.com/translate/)
 
 ## Contact me
