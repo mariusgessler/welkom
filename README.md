@@ -1,2 +1,31 @@
-# welkom
-An app to equip newcomers in the Netherlands with some basic tools.
+# Welkom!
+
+An app, which makes the process of settling in The Netherlands easier by provide four tools:
+*  News
+*  Translator
+*  Currency converter
+*  Weather widget
+
+Take a look at the [live-version](https://welkom.netlify.com/news).
+ 
+## Technologies 
+
+Built with: 
+
+* _Ionic/React_ - 4.9.0
+* _CSS_ 
+
+APIs:
+
+* [_News API_](https://newsapi.org)
+* [_Dark Sky Weather API_](https://darksky.net/dev)
+* [_Currency Converter API_](https://darksky.net/dev)
+* [_Google Translate Package_](https://cloud.google.com/translate/)
+
+## Contact me
+
+* [Email](mailto:marius.gessler@gmail.com)
+* [LinkedIn](https://www.linkedin.com/in/marius-gessler/)
+
+
+
