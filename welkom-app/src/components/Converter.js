@@ -101,7 +101,7 @@ class CurrencyExchanger extends Component{
                         <p>as of {this.state.date} </p>
                 </div>
 
-                <IonCard>       
+                <IonCard style={{maxWidth: "600px", margin: "0 auto"}}>        
                     <IonCardContent className="converter-container">
                     <div className="converter-input">
                         <IonItem>

@@ -11,7 +11,7 @@ import './TranslatorPage.css'
 const TranslatorPage = () => {
   return (
     <>
-    <IonPage>
+    <IonPage >
       <Header/>
         <IonContent>
           <Translator/>

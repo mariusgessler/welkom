@@ -56,8 +56,8 @@ class Translator extends Component {
     render(){
         return (
             <>
-            <IonCard>
-                <IonCardContent className = "output-card">
+            <IonCard style={{maxWidth: "450px", margin: " 25px auto"}}>
+                <IonCardContent className = "output-card" >
                     <ReactCountryFlag className="flag" code={this.state.outputLanguage === "en" ? "gb" : "nl" }/>
                      <p >{this.state.output}</p>
                 </IonCardContent>

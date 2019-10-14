@@ -43,7 +43,7 @@ class NewsArticles extends Component {
             <>
            {!this.state.isLoading ?
                 this.state.articles.map((articles,index) => 
-                    <IonCard key={index} className="card">
+                    <IonCard key={index} className="card" style={{maxWidth: "450px", margin: " 25px auto"}}>
                         <IonImg src={articles.urlToImage}></IonImg>
                             <IonCardHeader>
                                 <a href={articles.url}>
