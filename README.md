@@ -5,8 +5,6 @@ An app, which makes the process of settling in The Netherlands easier by providi
 *  Translator
 *  Currency converter
 *  Weather widget
-
-Take a look at the [live-version](https://welkom.netlify.com/news).
  
 ## Technologies 
 
