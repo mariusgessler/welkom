@@ -1,6 +1,6 @@
 # Welkom!
 
-An app, which makes the process of settling in The Netherlands easier by provide four tools:
+An app, which makes the process of settling in The Netherlands easier by providing four tools:
 *  News
 *  Translator
 *  Currency converter
