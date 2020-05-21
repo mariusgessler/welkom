@@ -7,7 +7,7 @@ import {
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonTabs
+  IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { chatboxes, flash, cash } from 'ionicons/icons';
@@ -35,35 +35,34 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 function App() {
-  return  (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/news" component={NewsPage} exact={true} />
-          <Route path="/translator" component={TranslatorPage} exact={true} />
-          <Route path="/converter" component={ConverterPage} exact={true}/>
-          <Route exact path="/" render={() => <Redirect to="/news" />} />
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="news" href="/news">
-            <IonIcon icon={flash} />
-            <IonLabel>News</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="translator" href="/translator">
-            <IonIcon icon={chatboxes} />
-            <IonLabel>Translator</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="converter" href="/converter">
-            <IonIcon icon={cash} />
-            <IonLabel>Converter</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-
-  </IonApp>
-);
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Route path="/news" component={NewsPage} exact />
+            <Route path="/translator" component={TranslatorPage} exact />
+            <Route path="/converter" component={ConverterPage} exact />
+            <Route exact path="/" render={() => <Redirect to="/news" />} />
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="news" href="/news">
+              <IonIcon icon={flash} />
+              <IonLabel>News</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="translator" href="/translator">
+              <IonIcon icon={chatboxes} />
+              <IonLabel>Translator</IonLabel>
+            </IonTabButton>
+            <IonTabButton tab="converter" href="/converter">
+              <IonIcon icon={cash} />
+              <IonLabel>Converter</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
+    </IonApp>
+  );
 }
 
 export default App;

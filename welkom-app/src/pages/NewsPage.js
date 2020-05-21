@@ -1,24 +1,22 @@
 import React from 'react';
 import {
-  IonPage, 
-  IonContent
+  IonPage,
+  IonContent,
 } from '@ionic/react';
 
 import Header from '../components/Header/Header';
 import NewsArticles from '../components/NewsArticles';
 import './NewsPage.css';
 
-const NewsPage = () => {
-  return (
-    <>
+const NewsPage = () => (
+  <>
     <IonPage>
-      <Header/>
-        <IonContent>
-          <NewsArticles/>
-        </IonContent>
+      <Header />
+      <IonContent>
+        <NewsArticles />
+      </IonContent>
     </IonPage>
-    </>
-  );
-};
+  </>
+);
 
 export default NewsPage;

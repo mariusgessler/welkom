@@ -1,24 +1,22 @@
 import React from 'react';
 import {
-   IonPage, 
-   IonContent
+  IonPage,
+  IonContent,
 } from '@ionic/react';
 
 import Header from '../components/Header/Header';
 import Translator from '../components/Translator';
-import './TranslatorPage.css'
+import './TranslatorPage.css';
 
-const TranslatorPage = () => {
-  return (
-    <>
-    <IonPage >
-      <Header/>
-        <IonContent>
-          <Translator/>
-        </IonContent>
+const TranslatorPage = () => (
+  <>
+    <IonPage>
+      <Header />
+      <IonContent>
+        <Translator />
+      </IonContent>
     </IonPage>
-    </>
-  );
-};
+  </>
+);
 
 export default TranslatorPage;
